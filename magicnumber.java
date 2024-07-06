@@ -1,4 +1,4 @@
-public class Magic {
+public class magicnumber {
 	public static void main(String[] args) {
     int myNumber = 154;
     // this is the original no
