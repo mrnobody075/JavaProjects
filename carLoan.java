@@ -1,4 +1,4 @@
-public class CarLoan {
+public class carLoan {
 	public static void main(String[] args) {
     int carLoan = 10000;
     int loanLength = 3;
