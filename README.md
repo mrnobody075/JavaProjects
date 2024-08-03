@@ -1,1 +1,1 @@
-# JavaProjects
+Projects basd on Java programming done as practice# JavaProjects
