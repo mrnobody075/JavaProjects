@@ -56,6 +56,11 @@ public class LibraryManagementSystem {
         System.out.print("Enter book author: ");
         String author = scanner.nextLine();
 
+        if (title.isEmpty() || author.isEmpty()) {
+            System.out.println("Title and author cannot be empty.");
+            return;
+        }
+
         books.add(new Book(title, author));
         System.out.println("Book added successfully.");
     }
@@ -92,14 +97,23 @@ public class LibraryManagementSystem {
         System.out.print("Enter book title or author to search: ");
         String query = scanner.nextLine();
 
+        boolean found = false;
         for (Book book : books) {
             if (book.getTitle().equalsIgnoreCase(query) || book.getAuthor().equalsIgnoreCase(query)) {
                 System.out.println(book);
+                found = true;
             }
+        }
+        if (!found) {
+            System.out.println("No books found.");
         }
     }
 
     private static void viewAllBooks() {
+        if (books.isEmpty()) {
+            System.out.println("No books in the library.");
+            return;
+        }
         for (Book book : books) {
             System.out.println(book);
         }
@@ -151,4 +165,13 @@ public class LibraryManagementSystem {
             available = false;
         }
 
-        public void return
+        public void returnBook() {
+            available = true;
+        }
+
+        @Override
+        public String toString() {
+            return "Title: " + title + ", Author: " + author + ", Available: " + available;
+        }
+    }
+}
